@@ -2,7 +2,6 @@
 
 // Создание экземпляра класса DOMParser. Он позволит нам парсить XML
 const parser = new DOMParser();
-// console.log('parser', parser);
 
 // XML, который мы будем парсить
 const xmlString = `
@@ -25,7 +24,6 @@ const xmlString = `
         </student>
     </list>
 `;
-// console.log('xmlString', xmlString);
 
 /* Этап 2. Получение данных */
 
@@ -34,9 +32,9 @@ const xmlDOM = parser.parseFromString(xmlString, "text/xml");
 
 // Получение всех DOM-нод
 const listNode = xmlDOM.querySelectorAll("student");
-const resultList = []
+const resultList = [];
 
-listNode.forEach(item => {
+listNode.forEach((item) => {
     const nameNode = item.querySelector("name");
     const firstNode = item.querySelector("first");
     const secondNode = item.querySelector("second");
@@ -56,5 +54,3 @@ listNode.forEach(item => {
     resultList.push(result);
     console.log("result", result);
 });
-
-
