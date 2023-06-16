@@ -6,9 +6,11 @@
 }
 
 .container {
-    max-width: 550px;
     height: 100%;
     background-color: rgb(41, 159, 61);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header__row {
@@ -17,11 +19,11 @@
     font-size: 36px;
 }
 
-.sender__row {
+.sender__row,
+.text__row {
     display: flex;
-    margin-top: 30px;
     align-self: center;
-    margin-left: 150px;
+    margin-top: 20px;
 }
 
 .button__row button {
@@ -33,13 +35,13 @@
 }
 
 .images__row {
-    display: flex;
-    flex-flow: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
     margin-top: 20px;
 }
 
-.text__row {
-    margin-top: 25px;
-    margin-left: 150px;
+.img_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 10px 20px;
 }

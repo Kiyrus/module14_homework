@@ -28,7 +28,7 @@ function checkInput() {
 
     printStatus("Uploading a photo...");
 
-    fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=${limit}`)
+    fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=${limit}`, { mode: "no-cors"})
         .then((response) => response.json())
         .then((json) => {
             showResult(json);

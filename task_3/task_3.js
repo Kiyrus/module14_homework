@@ -8,7 +8,7 @@ btnNode.addEventListener("click", checkInput);
 function checkInput() {
     const value = input.value;
     if (value >= 1 && value <= 10 && !isNaN(value)) {
-        useRequest("https://picsum.photos/v2/list?limit=" + value, showResult);
+        useRequest("http://jsonplaceholder.typicode.com/photos?_limit=" + value, showResult);
         printStatus("Uploading a photo...");
     } else {
         printStatus("A number outside the range from 1 to 10.");
@@ -44,8 +44,9 @@ function showResult(apiData) {
     let img = "";
     apiData.forEach((item) => {
         const imgBlock = `
-        <div> <img src="${item.download_url}" style="width: 150px; margin-right: 30px"/>
-            <p>${item.author}</p>
+        <div class="img_container">
+            <img src="${item.thumbnailUrl}" style="width: 150px;"/>
+            <p>${item.title}</p>
         </div>
         `;
         img += imgBlock;

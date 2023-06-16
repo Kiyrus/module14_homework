@@ -24,7 +24,7 @@ function checkInput() {
 
     printStatus("Uploading a photo...");
 
-    fetch(`https://picsum.photos/${width}/${height}`)
+    fetch(`https://loremflickr.com/${width}/${height}`)
         .then((response) => response.url)
         .then((result) => {
             showrResult(result);
